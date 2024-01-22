@@ -24,7 +24,7 @@ If you have any suggestions or ideas or collaboration ideas contact me via email
 Heres an example from a ground truth trajectory
 ![](2023-05-22-13-14-57.png)
 Shown here is a distribution of relative particle positions sampled over a few timesteps (left) and for a single step (right). In the ground truth we see a clear formation of two _rings_ at $\Delta x$ and $2\Delta x$ with a minimum particle separation but an otherwise uniform distribution. Now consider a machine learning trajectory:
-![](2023-05-22-13-14-57.png) 
+![](2023-05-22-13-19-31.png) 
 Here we still see the two rings and uniformity but the minimum particle separation is lower. This can often lead to issues during inference as those distributions are not included in the training data, albeit this can be reduced in impact by using unroll noise and data augmentation (to an extent). Now consider this method:
 ![](2023-05-22-13-19-31.png)
 Which shows a highly biased distribution that aligns much closer to a rectilinear grid than an isotroptic distribution with a much lower minimum distance between particles. While this looks worse, and arguably is, this method is more stable in a lot of cases as this distribution acts as a stabilizing measure by regularizing the particle positions, similar to particle shifting. Note that the real reason we got these results was that the method in the last picture wasnt implemented properly and the _bug_ lead to an interesting and, somewhat, improved result.
