@@ -1,4 +1,6 @@
-# Particle Methods and Applications Conference 2024
+# Cross-Validation of SPH-based Machine Learning Models using the Taylor-Green Vortex Case 
+
+As presented at the __Particle Methods and Applications Conference 2024__ co-hosted by LANL and SPHERIC.
 
 The Slides: https://docs.google.com/presentation/d/1W1yhR9dHK5ysy2fIDsSPK6_JHSIFXYCW/edit#slide=id.p1
 
