@@ -24,34 +24,29 @@
     
       <div class="crossnote markdown-preview  ">
       
-<h1 id="cross-validation-of-sph-based-machine-learning-models-using-the-taylor-green-vortex-case">Cross-Validation of SPH-based Machine Learning Models using the Taylor-Green Vortex Case </h1>
-<p>As presented at the <strong>Particle Methods and Applications Conference 2024</strong> co-hosted by LANL and SPHERIC.</p>
-<p>The Slides: <a href="https://docs.google.com/presentation/d/1W1yhR9dHK5ysy2fIDsSPK6_JHSIFXYCW/edit#slide=id.p1">https://docs.google.com/presentation/d/1W1yhR9dHK5ysy2fIDsSPK6_JHSIFXYCW/edit#slide=id.p1</a></p>
-<p>Our recent (May 2024) paper published at ICLR 2024: <a href="https://openreview.net/forum?id=HKgRwNhI9R">https://openreview.net/forum?id=HKgRwNhI9R</a></p>
-<p>Last Years live demo from SPHERIC 2023 (Rhodes) using Continuous Convolutions to learn a kernel function: <a href="https://colab.research.google.com/drive/1wdJoWvu1U5pftkjpjG0gb0ldSh5-CgDX">https://colab.research.google.com/drive/1wdJoWvu1U5pftkjpjG0gb0ldSh5-CgDX</a> (if the code doesnt work contact me please)</p>
-<p>If you have any suggestions or ideas or collaboration ideas contact me via email at rene.winchenbach at <a href="http://tum.de">tum.de</a> or find me on linked in: <a href="https://www.linkedin.com/in/rene-winchenbach-56a217257/">https://www.linkedin.com/in/rene-winchenbach-56a217257/</a></p>
-<h2 id="interesting-reads-if-you-are-interested-in-more-machine-learning-in-physics">Interesting reads if you are interested in more machine learning in physics </h2>
-<ul>
-<li>Learning Lagrangian Fluid Mechanics with Continuous Convolutions: the baseline of our current research <a href="https://openreview.net/forum?id=B1lDoJSYDH">https://openreview.net/forum?id=B1lDoJSYDH</a></li>
-<li>Guaranteed Conservation of Momentum for Learning Particle-based Fluid Dynamics: a follow up work on the prior paper that builds in hard constraints to ensure conservation of momentum <a href="https://arxiv.org/abs/2210.06036">https://arxiv.org/abs/2210.06036</a></li>
-<li>Physics informed machine learning with Smoothed Particle Hydrodynamics: Hierarchy of reduced Lagrangian models of turbulence: The paper presented by Michael Woodward at PMAC <a href="https://arxiv.org/abs/2110.13311">https://arxiv.org/abs/2110.13311</a></li>
-<li>Message-Passing Neural PDE Solvers: A state of the art graph based neural network approach to solving generic PDEs <a href="https://openreview.net/forum?id=vSix3HPYKSU">https://openreview.net/forum?id=vSix3HPYKSU</a></li>
-</ul>
-<h2 id="what-we-plan-on-doing-next">What we plan on doing next: </h2>
-<ul>
-<li>Hybrid solvers, e.g., low order SPH method + Neural network corrections to achieve higher order accuracy</li>
-<li>Investigating more general Radial Basis Function Networks for particle mechanics</li>
-<li>Learning specific subparts of an SPH simulation that are really expensive, e.g., the recent iterative particle shifting method</li>
-<li>Publishing our dataset (after some more work to make it more representative) as a dataset paper</li>
-</ul>
-<h2 id="finally-an-interesting-example-like-mentioned">Finally an interesting example like mentioned </h2>
-<p>Heres an example from a ground truth trajectory<br>
-<img src="2023-05-22-13-14-57.png" alt=""><br>
-Shown here is a distribution of relative particle positions sampled over a few timesteps (left) and for a single step (right). In the ground truth we see a clear formation of two <em>rings</em> at <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">Δ</span><span class="mord mathnormal">x</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">2\Delta x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord">2Δ</span><span class="mord mathnormal">x</span></span></span></span> with a minimum particle separation but an otherwise uniform distribution. Now consider a machine learning trajectory:<br>
-<img src="2023-05-22-13-18-55.png" alt=""><br>
-Here we still see the two rings and uniformity but the minimum particle separation is lower. This can often lead to issues during inference as those distributions are not included in the training data, albeit this can be reduced in impact by using unroll noise and data augmentation (to an extent). Now consider this method:<br>
-<img src="2023-05-22-13-19-31.png" alt=""><br>
-Which shows a highly biased distribution that aligns much closer to a rectilinear grid than an isotroptic distribution with a much lower minimum distance between particles. While this looks worse, and arguably is, this method is more stable in a lot of cases as this distribution acts as a stabilizing measure by regularizing the particle positions, similar to particle shifting. Note that the real reason we got these results was that the method in the last picture wasnt implemented properly and the <em>bug</em> lead to an interesting and, somewhat, improved result.</p>
+<p>Welcome to my landing page.</p>
+<p>If you have any questions or would like to collaborate, please reach out to me via contact@fluids.dev.</p>
+<h1 id="publications--projects">Publications &amp; Projects: </h1>
+<p>Rene Winchenbach, Hendrik Hochstetter and Andreas Kolb. <strong>Constrained Neighbor Lists for SPH-based Fluid Simulations</strong>. In Proceedings of the ACM SIGGRAPH/Eurographics Symposium on Computer Animation (SCA), pp. 49-56, July 2016, ISBN: 9783905674613</p>
+<p>Rene Winchenbach, Hendrik Hochstetter and Andreas Kolb. <strong>Infinite Continuous Adaptivity for Incompressible SPH</strong>. In ACM Transactions on Graphics (TOG), volume 36 number 4, pp.102:1-102:10, July 2017, doi: 10.1145/3072959.3073713</p>
+<p>Rene Winchenbach and Andreas Kolb. <strong>Multi-Level-Memory Structures for Adaptive SPH Simulations</strong>. In Proceedings of Vision, Modeling and Visualization (VMV), October 2019, doi: 10.2312/vmv.20191323</p>
+<p>Rene Winchenbach and Andreas Kolb. <strong>Multi-Level Memory Structures for Simulating and Rendering Smoothed Particle Hydrodynamics</strong>. In Computer Graphics Forum (CGF), volume 39 number 6, pp. 527-541, September 2020, doi: 10.1111/cgf.14090</p>
+<p>Rene Winchenbach, Rustam Akhunov and Andreas Kolb. <strong>Semi-Analytic Boundary Handling Below Particle Resolution for Smoothed Particle Hydrodynamics</strong>. In ACM Transactions on Graphics (TOG), volume 39, number 6, pp. 173.1:173:17, December 2020, doi: 10.1145/3414685.3417829</p>
+<p>Rene Winchenbach and Andreas Kolb. <strong>Optimized Refinement for Spatially Adaptive SPH</strong>. In ACM Transactions on Graphics (TOG), volume 40, number 1, pp. 8.1-8.15, January 2021, doi: 10.1145/3363555</p>
+<p>Visualizing Optimizers using Chebyshev Proxies and Fatou Sets - Rene Winchenbach, Nils Thuerey - VMV 2022 Constance - <a href="https://diglib.eg.org/items/bfe6fd78-6804-4acc-a9c4-4e666641a42f">https://diglib.eg.org/items/bfe6fd78-6804-4acc-a9c4-4e666641a42f</a></p>
+<p><strong>A Hybrid Framework for Fluid Flow Simulations: Combining SPH with Machine Learning</strong> - Rene Winchenbach, Nils Thuerey - SPHERIC 2023 Rhodes - <a href="https://colab.research.google.com/drive/1wdJoWvu1U5pftkjpjG0gb0ldSh5-CgDX">https://colab.research.google.com/drive/1wdJoWvu1U5pftkjpjG0gb0ldSh5-CgDX</a></p>
+<p><strong>Lipschitz-agnostic, efficient and accurate rendering of implicit surfaces</strong> - Rene Winchenbach, Michael Möller and Andreas Kolb - The Visual Computer 2024 - <a href="https://link.springer.com/article/10.1007/s00371-023-03216-y">https://link.springer.com/article/10.1007/s00371-023-03216-y</a></p>
+<p><strong>Cross-Validation of SPH-based Machine Learning Models using the Taylor-Green Vortex Case</strong> - Rene Winchenbach, Nils Thuerey - Particles Methods and Applications Conference 2024 Santa Fe - <a href="https://wi-re.github.io/pmac2024/">https://wi-re.github.io/pmac2024/</a></p>
+<p><strong>Symmetric Fourier Basis Convolutions for Learning Lagrangian Fluid Simulations</strong> - Rene Winchenbach, Nils Thuerey - International Conference on Learning Representation 2024 Vienna - <a href="https://tum-pbs.github.io/SFBC">https://tum-pbs.github.io/SFBC</a></p>
+<p><strong>Physically-Motivated Machine Learning Models for Lagrangian Fluid Mechanics</strong> - Rene Winchenbach, Nils Thuerey - SPHERIC 2024 Berlin - <a href="https://wi-re.github.io/spheric2024/">https://wi-re.github.io/spheric2024/</a></p>
+<h1 id="code-projects">Code Projects </h1>
+<p>An efficient 3x3 SVD for GPUs and CPUs: <a href="https://github.com/wi-re/tbtSVD">https://github.com/wi-re/tbtSVD</a></p>
+<p>OpenMaelstrom - an open source gpu based SPH solver from the Computer Graphics Field: <a href="https://github.com/wi-re/openMaelstrom">https://github.com/wi-re/openMaelstrom</a></p>
+<p>diffSPH - Towards differentiable SPH simulations: <a href="https://github.com/wi-re/diffSPH">https://github.com/wi-re/diffSPH</a></p>
+<p>TorchCompactRadius - Efficient Neighborsearches for particle based simulations in pytorch: <a href="https://github.com/wi-re/torchCompactRadius">https://github.com/wi-re/torchCompactRadius</a></p>
+<p>Symmetric Fourier Basis Convolutions - The Farmework used for our ICLR 2024 publication: <a href="https://github.com/tum-pbs/SFBC">https://github.com/tum-pbs/SFBC</a></p>
+<h1 id="unpublished-projects">Unpublished Projects: </h1>
+<p>Analytic Boundary Handling for SPH - Towards Higher Order Methods - Rene Winchenbach, Andreas Kolb - <a href="https://github.com/wi-re/spheric2024/blob/main/Analytic_Boundary_Handling___SPHERIC_Version.pdf">https://github.com/wi-re/spheric2024/blob/main/Analytic_Boundary_Handling___SPHERIC_Version.pdf</a></p>
 
       </div>
       

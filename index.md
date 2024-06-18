@@ -1,33 +1,50 @@
-# Cross-Validation of SPH-based Machine Learning Models using the Taylor-Green Vortex Case 
+Welcome to my landing page.
 
-As presented at the __Particle Methods and Applications Conference 2024__ co-hosted by LANL and SPHERIC.
+If you have any questions or would like to collaborate, please reach out to me via contact@fluids.dev.
 
-The Slides: https://docs.google.com/presentation/d/1W1yhR9dHK5ysy2fIDsSPK6_JHSIFXYCW/edit#slide=id.p1
+# Publications & Projects:
 
-Our recent (May 2024) paper published at ICLR 2024: https://openreview.net/forum?id=HKgRwNhI9R
+Rene Winchenbach, Hendrik Hochstetter and Andreas Kolb. __Constrained Neighbor Lists for SPH-based Fluid Simulations__. In Proceedings of the ACM SIGGRAPH/Eurographics Symposium on Computer Animation (SCA), pp. 49-56, July 2016, ISBN: 9783905674613
 
-Last Years live demo from SPHERIC 2023 (Rhodes) using Continuous Convolutions to learn a kernel function: https://colab.research.google.com/drive/1wdJoWvu1U5pftkjpjG0gb0ldSh5-CgDX (if the code doesnt work contact me please)
+Rene Winchenbach, Hendrik Hochstetter and Andreas Kolb. __Infinite Continuous Adaptivity for Incompressible SPH__. In ACM Transactions on Graphics (TOG), volume 36 number 4, pp.102:1-102:10, July 2017, doi: 10.1145/3072959.3073713
 
-If you have any suggestions or ideas or collaboration ideas contact me via email at rene.winchenbach at tum.de or find me on linked in: https://www.linkedin.com/in/rene-winchenbach-56a217257/ 
+Rene Winchenbach and Andreas Kolb. __Multi-Level-Memory Structures for Adaptive SPH Simulations__. In Proceedings of Vision, Modeling and Visualization (VMV), October 2019, doi: 10.2312/vmv.20191323
 
-## Interesting reads if you are interested in more machine learning in physics
-- Learning Lagrangian Fluid Mechanics with Continuous Convolutions: the baseline of our current research https://openreview.net/forum?id=B1lDoJSYDH 
-- Guaranteed Conservation of Momentum for Learning Particle-based Fluid Dynamics: a follow up work on the prior paper that builds in hard constraints to ensure conservation of momentum https://arxiv.org/abs/2210.06036
-- Physics informed machine learning with Smoothed Particle Hydrodynamics: Hierarchy of reduced Lagrangian models of turbulence: The paper presented by Michael Woodward at PMAC https://arxiv.org/abs/2110.13311
-- Message-Passing Neural PDE Solvers: A state of the art graph based neural network approach to solving generic PDEs https://openreview.net/forum?id=vSix3HPYKSU
+Rene Winchenbach and Andreas Kolb. __Multi-Level Memory Structures for Simulating and Rendering Smoothed Particle Hydrodynamics__. In Computer Graphics Forum (CGF), volume 39 number 6, pp. 527-541, September 2020, doi: 10.1111/cgf.14090
 
-## What we plan on doing next:
-- Hybrid solvers, e.g., low order SPH method + Neural network corrections to achieve higher order accuracy
-- Investigating more general Radial Basis Function Networks for particle mechanics
-- Learning specific subparts of an SPH simulation that are really expensive, e.g., the recent iterative particle shifting method
-- Publishing our dataset (after some more work to make it more representative) as a dataset paper
 
-## Finally an interesting example like mentioned
-Heres an example from a ground truth trajectory
-![](2023-05-22-13-14-57.png)
-Shown here is a distribution of relative particle positions sampled over a few timesteps (left) and for a single step (right). In the ground truth we see a clear formation of two _rings_ at $\Delta x$ and $2\Delta x$ with a minimum particle separation but an otherwise uniform distribution. Now consider a machine learning trajectory:
-![](2023-05-22-13-18-55.png) 
-Here we still see the two rings and uniformity but the minimum particle separation is lower. This can often lead to issues during inference as those distributions are not included in the training data, albeit this can be reduced in impact by using unroll noise and data augmentation (to an extent). Now consider this method:
-![](2023-05-22-13-19-31.png)
-Which shows a highly biased distribution that aligns much closer to a rectilinear grid than an isotroptic distribution with a much lower minimum distance between particles. While this looks worse, and arguably is, this method is more stable in a lot of cases as this distribution acts as a stabilizing measure by regularizing the particle positions, similar to particle shifting. Note that the real reason we got these results was that the method in the last picture wasnt implemented properly and the _bug_ lead to an interesting and, somewhat, improved result.
+Rene Winchenbach, Rustam Akhunov and Andreas Kolb. __Semi-Analytic Boundary Handling Below Particle Resolution for Smoothed Particle Hydrodynamics__. In ACM Transactions on Graphics (TOG), volume 39, number 6, pp. 173.1:173:17, December 2020, doi: 10.1145/3414685.3417829
 
+Rene Winchenbach and Andreas Kolb. __Optimized Refinement for Spatially Adaptive SPH__. In ACM Transactions on Graphics (TOG), volume 40, number 1, pp. 8.1-8.15, January 2021, doi: 10.1145/3363555
+
+
+Visualizing Optimizers using Chebyshev Proxies and Fatou Sets - Rene Winchenbach, Nils Thuerey - VMV 2022 Constance - https://diglib.eg.org/items/bfe6fd78-6804-4acc-a9c4-4e666641a42f
+
+
+__A Hybrid Framework for Fluid Flow Simulations: Combining SPH with Machine Learning__ - Rene Winchenbach, Nils Thuerey - SPHERIC 2023 Rhodes - https://colab.research.google.com/drive/1wdJoWvu1U5pftkjpjG0gb0ldSh5-CgDX
+
+__Lipschitz-agnostic, efficient and accurate rendering of implicit surfaces__ - Rene Winchenbach, Michael Möller and Andreas Kolb - The Visual Computer 2024 - https://link.springer.com/article/10.1007/s00371-023-03216-y
+
+
+__Cross-Validation of SPH-based Machine Learning Models using the Taylor-Green Vortex Case__ - Rene Winchenbach, Nils Thuerey - Particles Methods and Applications Conference 2024 Santa Fe - https://wi-re.github.io/pmac2024/
+
+__Symmetric Fourier Basis Convolutions for Learning Lagrangian Fluid Simulations__ - Rene Winchenbach, Nils Thuerey - International Conference on Learning Representation 2024 Vienna - https://tum-pbs.github.io/SFBC
+
+__Physically-Motivated Machine Learning Models for Lagrangian Fluid Mechanics__ - Rene Winchenbach, Nils Thuerey - SPHERIC 2024 Berlin - https://wi-re.github.io/spheric2024/
+
+# Code Projects
+
+An efficient 3x3 SVD for GPUs and CPUs: https://github.com/wi-re/tbtSVD
+
+OpenMaelstrom - an open source gpu based SPH solver from the Computer Graphics Field: https://github.com/wi-re/openMaelstrom
+
+diffSPH - Towards differentiable SPH simulations: https://github.com/wi-re/diffSPH
+
+
+TorchCompactRadius - Efficient Neighborsearches for particle based simulations in pytorch: https://github.com/wi-re/torchCompactRadius
+
+Symmetric Fourier Basis Convolutions - The Farmework used for our ICLR 2024 publication: https://github.com/tum-pbs/SFBC
+
+# Unpublished Projects:
+
+Analytic Boundary Handling for SPH - Towards Higher Order Methods - Rene Winchenbach, Andreas Kolb - https://github.com/wi-re/spheric2024/blob/main/Analytic_Boundary_Handling___SPHERIC_Version.pdf
