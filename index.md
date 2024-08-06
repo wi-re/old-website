@@ -79,3 +79,5 @@ __Symmetric Fourier Basis Convolutions__ - The Farmework used for our ICLR 2024 
 # Unpublished Projects:
 
 Analytic Boundary Handling for SPH - Towards Higher Order Methods - Rene Winchenbach, Andreas Kolb - https://github.com/wi-re/spheric2024/blob/main/Analytic_Boundary_Handling___SPHERIC_Version.pdf
+
+The slides of my PhD defense Can also be found [here](https://github.com/wi-re/wi-re.github.io/blob/main/TU.pdf).
