@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   A blog about my own research, publications, projects and more in the field of Fluid Mechanics and Machine Learning.
 
 baseurl: "" # the subpath of your site, e.g. /blog
-domain: "fluids.dev"
+# domain: "fluids.dev"
 url: "https://fluids.dev" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username:  wi-re
